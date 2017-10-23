@@ -24,7 +24,7 @@ function buildPage(template, target, extraData, hasExternalTarget = false) {
   let html = fn(viewData);
 
   if (!hasExternalTarget) {
-    let path = `network-api/app/networkapi/frontend${target}`;
+    let path = `network-api/networkapi/frontend${target}`;
 
     shelljs.mkdir(`-p`, path);
     shelljs.ShellString(html).to(`${path}/index.html`);
@@ -45,4 +45,4 @@ buildPage(`sign-up`, `/sign-up`);
 buildPage(`404`, `/errors/404`);
 
 // Opportunities Template – For Mezzanine (with tokens)
-buildPage(`opportunity`, `network-api/app/networkapi/templates/pages/landingpage.html`, null, true);
+buildPage(`opportunity`, `network-api/networkapi/templates/pages/landingpage.html`, null, true);
